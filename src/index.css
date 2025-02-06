@@ -1,0 +1,100 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.game__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.game__instructions {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+.target__box {
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+}
+.color__options {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  margin: 20px 0;
+}
+.color__option {
+  border-radius: 8px;
+  width: 80px;
+  height: 80px;
+  border: none;
+  cursor: pointer;
+}
+
+.show__status {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.show__status.correct {
+  color: green;
+  animation: celebrate 0.5s ease-in-out;
+}
+
+.show__status.wrong {
+  color: red;
+  animation: fadeOut 1s ease-in-out;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes celebrate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.new__game__btn {
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  color: White;
+  background-color: #87ceeb;
+  padding: 8px 16px;
+  border-radius: 8px;
+  display: inline-block;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.new__game__btn:hover {
+  background-color: #4682b4;
+}
+
+@media (max-width: 600px) {
+  .color__options {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .color__option {
+    width: 100px;
+    height: 100px;
+  }
+}
